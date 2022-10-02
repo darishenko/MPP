@@ -1,0 +1,12 @@
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\bin\Debug\net5.0\TracerLibrary.deps.json
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\bin\Debug\net5.0\TracerLibrary.dll
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\bin\Debug\net5.0\ref\TracerLibrary.dll
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\bin\Debug\net5.0\TracerLibrary.pdb
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\TracerLibrary.csproj.AssemblyReference.cache
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\TracerLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\TracerLibrary.AssemblyInfoInputs.cache
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\TracerLibrary.AssemblyInfo.cs
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\TracerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\TracerLibrary.dll
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\ref\TracerLibrary.dll
+C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\1Laba\TracerLibrary\TracerLibrary\obj\Debug\net5.0\TracerLibrary.pdb
