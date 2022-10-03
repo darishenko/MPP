@@ -2,17 +2,17 @@
   "ThreadsInfo": [
     {
       "Id": 1,
-      "TotalElapsedMilliseconds": 129,
+      "TotalElapsedMilliseconds": 139,
       "Methods": [
         {
           "Name": "MyMethod",
           "Class": "Foo",
-          "ElapsedMills": 129,
+          "ElapsedMills": 139,
           "Methods": [
             {
               "Name": "InnerMethod",
               "Class": "Bar",
-              "ElapsedMills": 125,
+              "ElapsedMills": 131,
               "Methods": []
             }
           ]
@@ -21,12 +21,12 @@
     },
     {
       "Id": 4,
-      "TotalElapsedMilliseconds": 106,
+      "TotalElapsedMilliseconds": 108,
       "Methods": [
         {
           "Name": "Method",
           "Class": "Program",
-          "ElapsedMills": 106,
+          "ElapsedMills": 108,
           "Methods": []
         }
       ]

@@ -1,8 +1,7 @@
 ﻿using Newtonsoft.Json;
 using TracerLibrary.Model;
-using TracerLibrary.Serialization.Interface;
 
-namespace TracerLibrary.Serialization.Serializer
+namespace TracerLibrary.Serialization
 {
     public class JsonTraceSerializer : ITraceSerializer
     {

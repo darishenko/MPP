@@ -1,6 +1,6 @@
 ﻿using TracerLibrary.Model;
 
-namespace TracerLibrary.Serialization.Interface
+namespace TracerLibrary.Serialization
 {
     public interface ITraceSerializer
     {

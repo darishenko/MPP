@@ -1,9 +1,8 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 using TracerLibrary.Model;
-using TracerLibrary.Serialization.Interface;
 
-namespace TracerLibrary.Serialization.Serializer
+namespace TracerLibrary.Serialization
 {
     public class XmlTraceSerializer : ITraceSerializer
     {

@@ -1,11 +1,10 @@
 ﻿#nullable enable
 using System.IO;
 using System.Threading;
-using Application.Writer;
 using ConsoleApp.Example;
+using ConsoleApp.Writer;
 using TracerLibrary.Logic;
-using TracerLibrary.Serialization.Interface;
-using TracerLibrary.Serialization.Serializer;
+using TracerLibrary.Serialization;
 
 namespace ConsoleApp
 {

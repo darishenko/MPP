@@ -9,7 +9,7 @@ namespace TracerLibrary.Logic
     {
         public ConcurrentStack<MethodTracer> MethodsTraces { get; init; } = new();
         public ConcurrentStack<MethodInfo> MethodsInfo { get; init; } = new();
-        public MethodTracer CurrentMethodTracer { get; set; } = null!;
+        public MethodTracer CurrentMethodTracer { get; set; }
 
         public void StartTrace()
         {

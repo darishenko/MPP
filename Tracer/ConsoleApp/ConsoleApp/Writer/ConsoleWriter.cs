@@ -1,8 +1,8 @@
 ﻿using System;
 using TracerLibrary.Model;
-using TracerLibrary.Serialization.Interface;
+using TracerLibrary.Serialization;
 
-namespace Application.Writer
+namespace ConsoleApp.Writer
 {
     public class ConsoleWriter : IWriter
     {

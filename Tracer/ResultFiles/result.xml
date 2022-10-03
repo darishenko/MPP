@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <TraceResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Thread Id="1" TotalElapsedMilliseconds="129">
-    <Method Name="MyMethod" Class="Foo" ElapsedMills="129">
-      <Method Name="InnerMethod" Class="Bar" ElapsedMills="125" />
+  <Thread Id="1" TotalElapsedMilliseconds="139">
+    <Method Name="MyMethod" Class="Foo" ElapsedMills="139">
+      <Method Name="InnerMethod" Class="Bar" ElapsedMills="131" />
     </Method>
   </Thread>
-  <Thread Id="4" TotalElapsedMilliseconds="106">
-    <Method Name="Method" Class="Program" ElapsedMills="106" />
+  <Thread Id="4" TotalElapsedMilliseconds="108">
+    <Method Name="Method" Class="Program" ElapsedMills="108" />
   </Thread>
 </TraceResult>
