@@ -4,7 +4,6 @@ using System.Xml.Serialization;
 
 namespace TracerLibrary.Model
 {
-
     [Serializable]
     public class TraceResult
     {

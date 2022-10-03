@@ -4,7 +4,6 @@ using TracerLibrary.Model;
 
 namespace TracerLibrary.Logic
 {
-
     public class MethodTracer
     {
         public Stopwatch Stopwatch { get; } = new();

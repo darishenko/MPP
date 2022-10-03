@@ -5,7 +5,6 @@ using TracerLibrary.Serialization.Interface;
 
 namespace TracerLibrary.Serialization.Serializer
 {
-
     public class XmlTraceSerializer : ITraceSerializer
     {
         public string Serialize(TraceResult traceResult)
@@ -16,7 +15,7 @@ namespace TracerLibrary.Serialization.Serializer
             return new StreamReader(memoryStream).ReadToEnd();
         }
 
-        public TraceResult? Deserialize(string traceResult)
+        public TraceResult Deserialize(string traceResult)
         {
             using var reader = new StringReader(traceResult);
             return (TraceResult) new XmlSerializer(typeof(TraceResult)).Deserialize(reader)!;

@@ -4,7 +4,6 @@ using TracerLibrary.Serialization.Interface;
 
 namespace TracerLibrary.Serialization.Serializer
 {
-
     public class JsonTraceSerializer : ITraceSerializer
     {
         public string Serialize(TraceResult traceResult)

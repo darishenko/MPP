@@ -2,7 +2,6 @@
 
 namespace TracerLibrary.Logic
 {
-
     public interface ITracer
     {
         void StartTrace();

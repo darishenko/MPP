@@ -21,12 +21,12 @@
     },
     {
       "Id": 4,
-      "TotalElapsedMilliseconds": 102,
+      "TotalElapsedMilliseconds": 106,
       "Methods": [
         {
           "Name": "Method",
           "Class": "Program",
-          "ElapsedMills": 102,
+          "ElapsedMills": 106,
           "Methods": []
         }
       ]

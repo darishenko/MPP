@@ -6,7 +6,6 @@ using TracerLibrary.Model;
 
 namespace TracerLibrary.Logic
 {
-
     public class MainTracer : ITracer
     {
         private readonly ConcurrentDictionary<int, ThreadTracer> _threadsTraceMap = new();
@@ -15,9 +14,7 @@ namespace TracerLibrary.Logic
         {
             var threadId = Thread.CurrentThread.ManagedThreadId;
             if (!_threadsTraceMap.TryGetValue(threadId, out var threadTracer))
-            {
                 threadTracer = _threadsTraceMap.GetOrAdd(threadId, new ThreadTracer());
-            }
 
             threadTracer.StartTrace();
         }
@@ -26,9 +23,7 @@ namespace TracerLibrary.Logic
         {
             var threadId = Thread.CurrentThread.ManagedThreadId;
             if (_threadsTraceMap.TryGetValue(threadId, out var threadTracer))
-            {
                 threadTracer.StopTrace(new StackTrace().GetFrame(1));
-            }
         }
 
         public TraceResult GetTraceResult()
@@ -46,6 +41,5 @@ namespace TracerLibrary.Logic
 
             return traceResult;
         }
-
     }
 }
