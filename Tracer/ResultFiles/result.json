@@ -1,0 +1,35 @@
+{
+  "ThreadsInfo": [
+    {
+      "Id": 1,
+      "TotalElapsedMilliseconds": 129,
+      "Methods": [
+        {
+          "Name": "MyMethod",
+          "Class": "Foo",
+          "ElapsedMills": 129,
+          "Methods": [
+            {
+              "Name": "InnerMethod",
+              "Class": "Bar",
+              "ElapsedMills": 125,
+              "Methods": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "TotalElapsedMilliseconds": 102,
+      "Methods": [
+        {
+          "Name": "Method",
+          "Class": "Program",
+          "ElapsedMills": 102,
+          "Methods": []
+        }
+      ]
+    }
+  ]
+}
