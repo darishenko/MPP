@@ -4,7 +4,6 @@ using TracerLibrary.Serialization.Interface;
 
 namespace Application.Writer
 {
-
     public class ConsoleWriter : IWriter
     {
         private ITraceSerializer _traceSerializer;
@@ -17,10 +16,7 @@ namespace Application.Writer
         public void Print(TraceResult traceResult)
         {
             var result = traceResult.ToString();
-            if (_traceSerializer != null)
-            {
-                result = _traceSerializer.Serialize(traceResult);
-            }
+            if (_traceSerializer != null) result = _traceSerializer.Serialize(traceResult);
 
             Console.WriteLine(result);
         }

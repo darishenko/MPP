@@ -1,30 +1,26 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using TracerLibrary.Model;
 using TracerLibrary.Serialization.Interface;
 
 namespace Application.Writer
 {
-
     public class FileWriter : IWriter
     {
-        private ITraceSerializer _traceSerializer { get; set; }
-        private String _fileName;
+        private readonly string _fileName;
 
-        public FileWriter(ITraceSerializer traceSerializer, String fileName)
+        public FileWriter(ITraceSerializer traceSerializer, string fileName)
         {
             _traceSerializer = traceSerializer;
             _fileName = fileName;
         }
 
+        private ITraceSerializer _traceSerializer { get; set; }
+
         public void Print(TraceResult traceResult)
         {
-            String fileName = _fileName + _traceSerializer.GetFileExtension();
+            var fileName = _fileName + _traceSerializer.GetFileExtension();
             var result = traceResult.ToString();
-            if (_traceSerializer != null)
-            {
-                result = _traceSerializer.Serialize(traceResult);
-            }
+            if (_traceSerializer != null) result = _traceSerializer.Serialize(traceResult);
 
             File.WriteAllText(fileName, result);
         }
