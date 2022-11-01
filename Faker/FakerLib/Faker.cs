@@ -22,7 +22,7 @@ namespace FakerLib
             _createdTypesInClass = new HashSet<Type>();
             _genericTypeCreator = new Dictionary<Type, IGenericCreator>();
             var assemblies = new List<Assembly>();
-            var path = @"C:\Users\Darishenko\Downloads\FakerLab-main\FakerLab-main\FakerLab\ListCreatorLib\bin\Debug";
+            var path = @"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\Faker\ListCreatorLib\bin\Debug";
 
             try
             {
