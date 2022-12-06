@@ -21,7 +21,7 @@ namespace FakerTests
             var a = _faker.Create<A>();
             Assert.NotNull(a.bClass);
             Assert.NotNull(a.bClass.cClass);
-            Assert.Null(a.bClass.aClass);
+            Assert.Null(a.bClass.aClass); 
             Assert.Null(a.bClass.cClass.aClass);
         }
 

@@ -19,6 +19,7 @@ namespace FakerLib
             var creator = (IPrimitiveTypeCreator) Activator.CreateInstance(typeof(TPrimitive));
             if (creator.CurType != typeof(TProperty))
                 throw new ArgumentException("Types of creators aren't match");
+            
             creators.Add((PropertyInfo) ((MemberExpression) expressionBody).Member, creator);
         }
 

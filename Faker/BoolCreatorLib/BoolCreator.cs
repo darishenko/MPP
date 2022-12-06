@@ -10,7 +10,7 @@ namespace BoolCreatorLib
 
         public BoolCreator()
         {
-            this.CurType = typeof(bool);
+            CurType = typeof(bool);
         }
 
         public object Create()

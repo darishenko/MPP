@@ -96,36 +96,6 @@ namespace TracerLibrary.Tests
                         result.ThreadsInfo[0].Methods[0].Methods[0].ElapsedMills);
         }
 
-        [Theory]
-        [InlineData(2)]
-        [InlineData(3)]
-        [InlineData(4)]
-        [InlineData(5)]
-        public void GetTraceResult_ManyThreads_ReturnedTraceResultWithCorrectThreadsCount(int countOfThreads)
-        {
-            var tracer = new MainTracer();
-            var testClass = new TestClass(tracer);
-
-            var events = new List<WaitHandle>();
-
-            for (var i = 0; i < countOfThreads; i++)
-            {
-                var resetEvent = new ManualResetEvent(false);
-                ThreadPool.QueueUserWorkItem(
-                    _ =>
-                    {
-                        testClass.TestMethod1();
-                        resetEvent.Set();
-                    });
-                events.Add(resetEvent);
-            }
-
-            WaitHandle.WaitAll(events.ToArray());
-
-            var result = tracer.GetTraceResult();
-            Assert.Equal(countOfThreads, result.ThreadsInfo.Count);
-        }
-
         private class TestClass
         {
             private readonly MainTracer _tracer;

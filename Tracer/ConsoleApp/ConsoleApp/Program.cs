@@ -45,8 +45,18 @@ namespace ConsoleApp
             var tracer = (MainTracer) o!;
             tracer.StartTrace();
             Thread.Sleep(100);
+            MyMethod(tracer);
+            MyMethod(tracer);
             tracer.StopTrace();
             Thread.Sleep(100);
+        }
+
+        private void MyMethod(object? o)
+        { var tracer = (MainTracer) o!;
+            tracer.StartTrace();
+            int j=0;
+            Thread.Sleep(30);
+            tracer.StopTrace();
         }
     }
 }

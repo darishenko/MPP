@@ -70,8 +70,7 @@ namespace FakerLib
         private object CreateObject(Type type)
         {
             object createdObject = null;
-
-
+            
             if (_primitiveTypeCreator.TryGetValue(type, out var creator))
             {
                 createdObject = creator.Create();
@@ -118,7 +117,6 @@ namespace FakerLib
 
             _createdTypesInClass.Add(type);
 
-
             if (constructor != null) createdClass = CreateFromConstructor(constructor, type);
 
             createdClass = CreateFromProperties(type, createdClass);
@@ -142,7 +140,8 @@ namespace FakerLib
                 if (fieldInfo.GetValue(created) == null)
                 {
                     object value = null;
-                    if (!CreateByCustomCreator(fieldInfo, out value)) value = CreateObject(fieldInfo.FieldType);
+                    if (!CreateByCustomCreator(fieldInfo, out value)) 
+                        value = CreateObject(fieldInfo.FieldType);
                     fieldInfo.SetValue(created, value);
                 }
 
