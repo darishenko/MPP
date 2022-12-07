@@ -1,0 +1,61 @@
+﻿<Window x:Class="AssemblyBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:assemblyBrowser="clr-namespace:AssemblyBrowserLibrary;assembly=AssemblyBrowserLibrary"
+        mc:Ignorable="d"
+        Title="Assembly Browser" Height="450" Width="800"
+        WindowState="Maximized">
+    
+    <Window.Resources>
+        <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style TargetType="{x:Type TreeView}" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="FontStyle" Value="Italic" />
+        </Style>
+
+        <Style TargetType="{x:Type MenuItem}" BasedOn="{StaticResource BaseStyle}" />
+    </Window.Resources>
+    
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Command="{Binding OpenFileCommand}" />
+            </MenuItem>
+        </Menu>
+
+        <Label DockPanel.Dock="Top" Content="{Binding AssemblyFileName, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TreeView DockPanel.Dock="Top" ItemsSource="{Binding AssemblyData, UpdateSourceTrigger=PropertyChanged}">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type assemblyBrowser:AssemblyInformation}">
+                    <TreeViewItem Header="{Binding Path=Name}" ItemsSource="{Binding Path=Namespaces}" />
+                </HierarchicalDataTemplate>
+
+                <!-- Namespace -->
+                <HierarchicalDataTemplate DataType="{x:Type assemblyBrowser:NamespaceInformation}">
+                    <TreeViewItem Header="{Binding Path=Name}" ItemsSource="{Binding Path=Classes}" />
+                </HierarchicalDataTemplate>
+
+                <!-- Class -->
+                <HierarchicalDataTemplate DataType="{x:Type assemblyBrowser:ClassInformation}"
+                                          ItemsSource="{Binding Path=Members}">
+                    <TextBlock Text="{Binding Path= FullName}" />
+                </HierarchicalDataTemplate>
+
+                <!-- Class members -->
+                <DataTemplate DataType="{x:Type assemblyBrowser:ClassMemberInformation}">
+                    <TreeViewItem Header="{Binding Name}"
+                                  ItemsSource="{Binding ClassMembers}" />
+                </DataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+        
+    </DockPanel>
+</Window>
