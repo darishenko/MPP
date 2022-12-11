@@ -56,12 +56,12 @@ namespace AssemblyBrowserTest
         {
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes.Count, 2);
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[0].Name, "ClassWithExtensionMethod");
+            Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[1].Name, "Tests");
         }
 
         [Test]
         public void TestClassesMembers()
         {
-            Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[0].Name, "ClassWithExtensionMethod");
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[0].Members.Count, 3);
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[0].Members[0].Name, "Fields");
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[0].Members[1].Name, "Properties");
@@ -70,7 +70,6 @@ namespace AssemblyBrowserTest
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[0].Members[1].ClassMembers.Count, 0);
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[0].Members[2].ClassMembers.Count, 6);
             
-            Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[1].Name, "Tests");
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[1].Members.Count, 3);
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[1].Members[0].Name, "Fields");
             Assert.AreEqual(assemblyInformation.Namespaces[0].Classes[1].Members[1].Name, "Properties");
