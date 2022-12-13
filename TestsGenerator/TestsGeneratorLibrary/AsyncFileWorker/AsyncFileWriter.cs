@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -9,25 +6,26 @@ namespace TestsGenerator
 {
     public class AsyncFileWriter
     {
-        private string outputDirectory;
+        private readonly string outputDirectory;
 
         public AsyncFileWriter(string outPutDirectory)
         {
-            this.outputDirectory = outPutDirectory;
+            outputDirectory = outPutDirectory;
         }
 
-        public async Task Write(TestClassTemplate classTemplate)
+        public async Task Write(List<TestClassInformation> classesInformation)
         {
-            if (classTemplate == null)
+            if (classesInformation == null) return;
+
+            foreach (var classInformation in classesInformation)
             {
-                return;
+                var filePath = outputDirectory + "\\" + classInformation.FileName;
+                using (var writer = new StreamWriter(filePath))
+                {
+                    await writer.WriteAsync(classInformation.InnerText);
+                }   
             }
 
-            string filePath = outputDirectory + "\\" + classTemplate.FileName;
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                await writer.WriteAsync(classTemplate.InnerText);
-            }
         }
     }
 }
