@@ -15,10 +15,9 @@ namespace TestsGeneratorApplication
     {
         private List<string> files;
         private const string ChoosingFilesTypes = "C# class files (*.cs) | *.cs";
-        private const string PathToSaveFiles =@"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\TestsGenerator\TestDirectory\";
+        private const string PathToSaveFiles =@"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\TestsGeneratorLibrary\TestDirectory\";
         private const string PathToChooseFiles = @"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\AssemblyBrowser\AssemblyBrowserLibrary";
-
-
+        
         public AppForm()
         {
             files = new List<string>();
@@ -27,7 +26,7 @@ namespace TestsGeneratorApplication
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
-
+        
         private void NumbersOnly_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -35,7 +34,7 @@ namespace TestsGeneratorApplication
                 e.Handled = true;
             }
         }
-
+        
         private void NumbersOnly_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -44,7 +43,7 @@ namespace TestsGeneratorApplication
                 textBox.Text = "";
             }
         }
-
+        
         private void AddFilesToList(string[] fileNames)
         {
             foreach (string file in fileNames)
@@ -55,6 +54,7 @@ namespace TestsGeneratorApplication
                 }
             }
         }
+        
         private void btnChooseFiles_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -67,6 +67,7 @@ namespace TestsGeneratorApplication
                 AddFilesToList(openFileDialog.FileNames);
             }
         }
+        
         private async void btnGenerate_Click(object sender, EventArgs e)
         {
             if (tbMaxRead.Text.Length == 0 || tbMaxProcess.Text.Length == 0 || tbMaxWrite.Text.Length == 0)
@@ -91,6 +92,8 @@ namespace TestsGeneratorApplication
                 return;
             }
 
+            TestsGenerator.TestGenerator generator = new TestsGenerator.TestGenerator(files, maxReadFilesCount, maxProcessTasksCount, maxWriteFilesCount);
+
             string folderPath;
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
@@ -109,7 +112,9 @@ namespace TestsGeneratorApplication
             if (!string.IsNullOrEmpty(folderPath))
             {
                 AsyncFileWriter asyncWriter = new AsyncFileWriter(folderPath);
+                await generator.Generate(asyncWriter);
             }
         }
+        
     }
 }
