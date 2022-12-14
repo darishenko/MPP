@@ -15,7 +15,6 @@ namespace TestsGenerator
             var templatesList = new List<TestClassInformation>();
             if (templates.Count != 0)
             {
-                
                 foreach (var template in templates)
                 {
                     var fileName = template.FileName;

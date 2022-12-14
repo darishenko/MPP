@@ -11,10 +11,10 @@ namespace TestsGeneratorApplication
         private const string ChoosingFilesTypes = "C# class files (*.cs) | *.cs";
 
         private const string PathToSaveFiles =
-            @"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\TestsGeneratorLibrary\TestDirectory\";
+            @"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\TestsGenerator\TestDirectory\Result";
 
         private const string PathToChooseFiles =
-            @"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\AssemblyBrowser\AssemblyBrowserLibrary";
+            @"C:\Users\Darishenko\Darishenko\UNIVERSITY\5 Semester\SPP\Labs\TestsGenerator\TestDirectory\Source";
 
         private readonly List<string> files;
 
